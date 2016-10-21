@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="<?php echo $this->layout->lang ?>">
+<head>
+    <noscript>
+        <meta http-equiv="refresh" content="0; URL=<?php echo $this->baseUrl('nojavascript') ?>" />
+    </noscript>
+    <?php $this->title() ?>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+   
+     <!-- jQuery -->
+    <script src="<?php echo $this->asset() ?>js/jquery.js"></script>
+    <?php $this->script() ?>
+    <?php $this->css() ?>
+
+    <style type="text/css">
+    a{
+        color:#333;
+        text-decoration: none;
+    }
+    body{
+        font-family: "Segoe UI",Helvetica, Arial, 'lucida grande' ,tahoma,verdana,arial,sans-serif;
+    }
+    a:hover{
+        color:red;
+    }
+    .language{
+        margin-right: 10px;
+    }
+    .language li{
+        float:left;
+        list-style: none;
+        padding: 5px;
+    }
+    .language li a{
+        color:white;
+    }
+    .language li a:hover{
+        text-decoration: underline;
+    }
+    .language li.active{
+        text-decoration: none;
+    }
+    .language li.active span:before{
+        content: "[";
+    }
+    .language li.active span:after{
+        content: "]";
+    }
+    .language li img{
+        display: block;
+        float:left;
+        margin-right: 5px;
+        margin-top: 4px;
+    }
+    .clearfix{
+        zoom:1;
+    }
+    .clearfix:after{
+        clear: both;
+        content: ".";
+        display: block;
+        height: 0;
+        line-height: 0;
+        visibility: hidden;
+    }
+    .menu{
+        background-color: #3b5998;
+    }
+    .menu li{
+        float:left;
+        
+        list-style: none;
+    }
+    .menu li a{
+        color:white;
+        padding: 15px;
+        display: block;
+        text-decoration: none;
+    }
+    
+    .menu li:hover,.menu li.active{
+        background-color: #333;
+        
+    }
+    .menu li.active a{
+        color:white;
+    }
+    .nav{
+        background-color: #000;
+        position: fixed;
+        top:0px;
+        left: 0px;
+        width: 100%;
+        padding:5px;
+        color:white;
+        border-bottom: 1px solid #133783;
+        -webkit-box-shadow: 0px 0px 1px #000;
+        -moz-box-shadow: 0px 0px 1px #000;
+        box-shadow: 0px 0px 1px #000;
+    }
+    .left{
+        float: left;
+    }
+    .right{
+        float: right;
+    }
+    .wrapper{
+        padding:10px;
+    }
+    .content{
+        width: 980px;
+        margin: 50px auto;
+    }
+    .mobile{
+        margin-right: 15px;
+        margin-top: 5px;
+    }
+    .mobile img{
+        width: 10px;
+        height: 10px;
+        padding:5px;
+        border: 1px solid #666;
+        border-radius: 15px;
+    }
+</style>
+</head>
+<body class="<?php echo $this->layout->lang ?>">
+    <div class="nav">
+        <div class="left" style="margin:0px 0px 0px 10px;font-size:20px">
+            <a style="color:white" href="<?php echo $this->baseUrl() ?>">PHP FRAMEWORK</a>
+        </div>
+        <div class="right mobile">
+           <a href="<?php echo $this->current_url(); ?>?mobile=true" title="display in mobile"><img src="<?php echo $this->asset() ?>images/mobile_icon.png" /></a>
+        </div>
+        <div class="language clearfix right">
+            <li><?php echo $this->language->show->select_lang; ?>:</li>
+            <?php 
+                $this->language->show('list_lang',true);
+            ?>
+        </div>
+        
+    </div>
+    <div class="content">
+        <div class="menu clearfix">
+        <?php 
+            echo "<li><a href='".$this->baseUrl()."'>".$this->language->menu->item1."</a></li>";
+            echo "<li><a href='".$this->baseUrl('news')."'>".$this->language->menu->item2."</a></li>";
+            echo "<li><a href='".$this->baseUrl('register.html')."'>".$this->language->menu->item4."</a></li>";
+            echo "<li><a href='".$this->baseUrl('login')."'>".$this->language->menu->item5."</a></li>";
+            echo "<li><a href='".$this->baseUrl('acp.html')."'>Admin</a></li>";
+         ?>
+
+        </div>
+            <div class="wrapper">
+                <?php $this->content() ?>
+           </div>
+        <hr />
+         <h3><?php echo $this->language->show->intro; ?></h3>
+         <p>
+            <?php echo $this->language->show->intro_text; ?>
+         </p>
+    </div>
+</body>
+</html>

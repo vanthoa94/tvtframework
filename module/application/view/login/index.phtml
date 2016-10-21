@@ -1,0 +1,45 @@
+<script type="text/javascript">
+	
+	$(function(){
+		$("form").kiemtra([
+			{
+				'name':'username',
+				'email':true,
+				'message':'<?php echo $this->language->show->vali_username ?>'
+			},
+			{
+				'name':'password',
+				'trong':true,
+				'message':'<?php echo $this->language->show->vali_password ?>'
+			}
+		]);
+		$(".menu li").eq(3).addClass("active");
+	});
+</script>
+
+<h2><?php echo $this->language->menu->item5 ?></h2>
+
+
+<form method="post" action="">
+	<table border="0" cellpadding="10" width="300">
+		<tr>
+			<td width="40%"><?php echo $this->language->show->username ?>: </td>
+			<td>
+				<input type="text" name="username" />
+			</td>
+		</tr>
+		<tr>
+			<td width="30%"><?php echo $this->language->show->password ?>: </td>
+			<td>
+				<input type="password" name="password" />
+			</td>
+		</tr>
+		<tr>
+			<td>
+			</td>
+			<td>
+				<input type="submit" value="<?php echo $this->language->show->btnlogin ?>" />
+			</td>
+		</tr>
+	</table>
+</form>

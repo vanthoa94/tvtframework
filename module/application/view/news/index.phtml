@@ -1,0 +1,21 @@
+<style type="text/css">
+	li.itemnews{
+		padding:20px;
+	}
+</style>
+
+<?php foreach ($this->data as $value) {?>
+<li class="itemnews">
+	<a href="<?php echo $this->baseUrl($value['url'].'_'.$value['id'].'.html') ?>" title="<?php echo $value['title'] ?>">
+		<?php echo $value['title'] ?>
+	</a>
+</li>
+<?php } ?>
+
+<?php $this->page->show() ?>
+
+ <script type="text/javascript">
+ $(function(){
+    $(".menu li").eq(1).addClass("active");
+ });
+ </script>

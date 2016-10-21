@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Page Not Found</title>
+</head>
+<body>
+<style type="text/css">
+	body{
+		font: 13px/20px normal Helvetica, Arial, sans-serif;
+		color: #4F5155;
+	}
+	#boxmesageerror{
+		width:70%;
+		margin:5% auto;
+		box-shadow: 0px 0px 5px #999;
+		-webkit-box-shadow: 0px 0px 5px #999;
+		-moz-box-shadow: 0px 0px 5px #999;
+
+	}
+	#boxmesageerror h1{
+		background-color: #f5f6f7;
+	    border-bottom: 1px solid #e5e5e5;
+	    color: #4e5665;
+	    font-weight: bold;
+	    line-height: 19px;
+	    padding: 10px 12px;
+	    font-size:20px;
+	}
+	#boxmesageerror #content{
+		padding:10px;
+		font-size: 15px;
+	}
+</style>
+<div id="boxmesageerror">
+<h1>Page Not Found</h1>
+<div id="content">
+	Đường dẫn: <u><?php echo $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']?></u> không tồn tại.<p>Hãy thử với url khác hoặc liên hệ với chúng tôi qua email: lenguyetanh103@gmail.com</p>
+</div>
+</div>
+</body>
+</html>

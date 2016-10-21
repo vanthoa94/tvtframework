@@ -1,0 +1,36 @@
+<?php 
+
+return array(
+	'default'=>array(
+		'controller'=>'index',
+		'action'=>'index'
+	),
+	'layout'=>'index',
+	'db'=>array(
+		"driver"=>"mysql",
+		"host"=>"localhost",
+		"dbname"=>"zend",
+		"username"=>"root",
+		"password"=>"",
+		"charset"=>"utf8",
+		"time_zone"=>"+7:00"
+	),
+	'route'=>array(
+		'([a-zA-Z0-9-]*)_([0-9])\.html'=>array(
+			'controller'=>'news',
+			'action'=>'detail',
+			'param'=>array('name','id')
+		),
+		'register.html'=>array(
+			'controller'=>'register',
+			'action'=>'index'
+		),
+		'acp.html'=>array(
+			'controller'=>'index',
+			'action'=>'index',
+			'module'=>'/acp'
+		),
+	),
+	'time_zone'=>"Asia/Ho_Chi_Minh",
+	"default_lang"=>'en'
+);

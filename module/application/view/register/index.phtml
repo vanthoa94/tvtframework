@@ -1,0 +1,86 @@
+<script type="text/javascript">
+	$(function(){
+		// $("form").kiemtra([
+		// 	{
+		// 		'name':'fullname',
+		// 		'string':true
+		// 	},
+		// 	{
+		// 		'name':'username',
+		// 		'email':true
+		// 	},
+		// 	{
+		// 		'name':'password',
+		// 		'max':100,
+		// 		'min':5,
+		// 		'message':'chiều dài từ 5 đến 100'
+		// 	},
+		// 	{
+		// 		'name':'repassword',
+		// 		'sosanhdoituong':true,
+		// 		'name2':'password'
+		// 	},
+		// 	{
+		// 		'name':'captcha',
+		// 		'trong':true
+		// 	}
+		// ]);
+		$(".menu li").eq(2).addClass("active");
+	});
+</script>
+<h2><?php echo $this->language->menu->item4 ?></h2>
+<?php if($this->message!=null){ ?>
+	<div style="color:red;width:500px;text-align:center">
+		<?php echo $this->message; ?>
+	</div>
+<?php } ?>
+<form method="post" action="">
+	<table border="0" cellpadding="10" width="500">
+		<tr>
+			<td width="30%"><?php echo $this->language->show->fullname ?>: </td>
+			<td>
+				<input type="text" name="fullname" value="<?php echo $this->request->post('fullname') ?>" />
+			</td>
+		</tr>
+		<tr>
+			<td width="30%"><?php echo $this->language->show->gender ?>: </td>
+			<td>
+				<label><?php echo $this->language->show->male ?><input type="radio" name="gender" value="1" checked="checked" /></label>
+				<label><?php echo $this->language->show->female ?><input type="radio" name="gender" value="0" /></label>
+			</td>
+		</tr>
+		<tr>
+			<td width="30%"><?php echo $this->language->show->username ?>: </td>
+			<td>
+				<input type="text" name="username" value="<?php echo $this->request->post('username') ?>" />
+			</td>
+		</tr>
+		<tr>
+			<td width="30%"><?php echo $this->language->show->password ?>: </td>
+			<td>
+				<input type="password" name="password" />
+			</td>
+		</tr>
+		<tr>
+			<td width="30%"><?php echo $this->language->show->retype_password ?>: </td>
+			<td>
+				<input type="password" name="repassword" />
+			</td>
+		</tr>
+
+		<tr>
+			<td width="30%">Captcha: </td>
+			<td class="clearfix">
+				<input type="text" name="captcha" style="width:60px;height:25px;float:left;margin-right:5px;float:left;display:block" />
+				<div class="left" style="width:115px"><?php $this->captcha->showWithRefresh() ?></div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			</td>
+			<td>
+				<input type="submit" value="<?php echo $this->language->show->btnlogin ?>" />
+			</td>
+		</tr>
+	</table>
+</form>

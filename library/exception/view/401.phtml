@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Error 401</title>
+</head>
+<body>
+<style type="text/css">
+	#boxmesageerror{
+		width:70%;
+		margin:5% auto;
+		box-shadow: 0px 0px 5px #999;
+		-webkit-box-shadow: 0px 0px 5px #999;
+		-moz-box-shadow: 0px 0px 5px #999;
+	}
+	#boxmesageerror h1{
+		background-color: #f5f6f7;
+	    border-bottom: 1px solid #e5e5e5;
+	    color: #4e5665;
+	    font-weight: bold;
+	    line-height: 19px;
+	    padding: 10px 12px;
+	    font-size:15px;
+	}
+	#boxmesageerror #content{
+		padding:10px;
+	}
+</style>
+<div id="boxmesageerror">
+<h1><?php echo $this->getTitle() ?></h1>
+<div id="content">
+	<?php echo $this->getMessage(); ?>
+</div>
+</div>
+</body>
+</html>
